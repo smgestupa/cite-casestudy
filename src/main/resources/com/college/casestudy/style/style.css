@@ -1,0 +1,40 @@
+.menu-bar {
+    -fx-background-color: #202225;
+}
+
+.menu-title {
+    -fx-text-fill: #70747b;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.menu-subtitle {
+    -fx-text-fill: #70747b;
+    -fx-font-size: 16px;
+}
+
+.menu-close {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+}
+
+.menu-close:hover {
+    -fx-text-fill: white;
+    -fx-background-color: #ed4245;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+}
+
+.menu-minimize {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+}
+
+.menu-minimize:hover {
+    -fx-text-fill: white;
+    -fx-background-color: #282b2e;
+    -fx-font-size: 16px;
+    -fx-cursor: hand;
+}

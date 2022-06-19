@@ -1,0 +1,37 @@
+.access-background {
+    -fx-background-color: #36393f;
+}
+
+.access-header {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-font-family: 'Uni Sans';
+}
+
+.access-subheader {
+    -fx-text-fill: #b3b4b7;
+    -fx-font-size: 16px;
+}
+
+.access-text-small {
+    -fx-text-fill: #b3b4b7;
+    -fx-font-size: 14px;
+}
+
+.access-text-big {
+    -fx-text-fill: #b3b4b7;
+    -fx-font-size: 16px;
+}
+
+.access-input-label {
+    -fx-text-fill: #b3b4b7;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.access-highlight-text {
+    -fx-text-fill: #02a9eb;
+    -fx-font-size: 16px;
+    -fx-font-weight: 500;
+}

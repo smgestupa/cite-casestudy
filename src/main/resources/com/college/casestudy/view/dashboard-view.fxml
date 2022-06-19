@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="BP_dashboardScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="1301.0" styleClass="dashboard-background" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.college.casestudy.controller.DashboardViewController">
+   <top>
+      <HBox fx:id="HB_customMenuBar" alignment="CENTER_LEFT" fillHeight="false" onMouseDragged="#onDragMenuBar" onMousePressed="#onClickMenuBar" prefHeight="35.0" prefWidth="960.0" styleClass="menu-bar" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="menu-title" text="CITE 004 " />
+            <Label styleClass="menu-subtitle" text="- Case Study" />
+            <AnchorPane prefHeight="35.0" HBox.hgrow="SOMETIMES" />
+            <Label onMouseClicked="#onMinimizeProgram" prefHeight="35.0" styleClass="menu-minimize" text="―">
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </Label>
+            <Label onMouseClicked="#onCloseProgram" prefHeight="35.0" styleClass="menu-close" text="X">
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </HBox>
+   </top>
+   <stylesheets>
+      <URL value="@../style/dashboard/dashboard.css" />
+      <URL value="@../style/style.css" />
+   </stylesheets>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="VB_accountsBoard" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <AnchorPane prefHeight="19.0" prefWidth="870.0" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="870.0">
+                     <children>
+                        <AnchorPane prefHeight="82.0" HBox.hgrow="ALWAYS" />
+                        <VBox prefHeight="101.0" prefWidth="450.0">
+                           <children>
+                              <Label text="Search a profile" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" prefHeight="71.0" prefWidth="418.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <TextField fx:id="TF_searchProfile" prefHeight="33.0" prefWidth="279.0" promptText="Type here a keyword..." styleClass="input-field" HBox.hgrow="SOMETIMES" />
+                                    <AnchorPane prefHeight="61.0" prefWidth="20.0" />
+                                    <Button mnemonicParsing="false" onMouseClicked="#searchQuery" prefHeight="7.0" prefWidth="102.0" styleClass="button-selected" text="Search" textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="82.0" prefWidth="180.0" />
+                        <VBox prefHeight="82.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="130.0" text="Classification" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="SOMETIMES">
+                                 <children>
+                                    <ComboBox fx:id="CB_sortByClassification" onAction="#initModel" prefHeight="33.0" prefWidth="150.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="82.0" prefWidth="25.0" />
+                        <VBox prefHeight="82.0">
+                           <children>
+                              <Label prefHeight="30.0" prefWidth="130.0" text="Sort by" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="SOMETIMES">
+                                 <children>
+                                    <ComboBox fx:id="CB_sortByAlgorithm" onAction="#initModel" prefHeight="33.0" prefWidth="150.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <AnchorPane prefHeight="82.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <StackPane prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                           <content>
+                              <GridPane fx:id="GP_grid" alignment="TOP_CENTER" prefHeight="15.0" prefWidth="41.0">
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                              </GridPane>
+                           </content>
+                           <StackPane.margin>
+                              <Insets bottom="10.0" left="20.0" right="10.0" />
+                           </StackPane.margin>
+                        </ScrollPane>
+                        <ImageView fx:id="IV_noResults" disable="true" fitHeight="115.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../assets/no-results.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="IV_loading" fitHeight="89.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/loading-icon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+               </children>
+            </VBox>
+            <StackPane fx:id="SP_accountInformation" prefHeight="150.0" prefWidth="200.0" visible="false" StackPane.alignment="CENTER">
+               <children>
+                  <AnchorPane onMouseClicked="#closeAccInfoPanel" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2f3136; -fx-opacity: 0.75; -fx-cursor: hand;" />
+                  <HBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #202225; -fx-background-radius: 8px;">
+                     <StackPane.margin>
+                        <Insets bottom="150.0" left="75.0" right="75.0" top="150.0" />
+                     </StackPane.margin>
+                     <children>
+                        <Label fx:id="L_accInfoClass" rotate="-90.0" text="STUDENT" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="49.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="-95.0" right="-60.0" top="100.0" />
+                           </HBox.margin>
+                        </Label>
+                        <VBox prefHeight="122.0" prefWidth="383.0" HBox.hgrow="SOMETIMES">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="L_accInfoClass1" styleClass="dashboard-header" text=" INFORMATION" />
+                                    <Label styleClass="dashboard-subheader" text="–">
+                                       <HBox.margin>
+                                          <Insets left="10.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="L_accInfoAccessCode" styleClass="dashboard-subheader" text="\%acc_accessCode%" />
+                                 </children>
+                              </HBox>
+                              <AnchorPane prefHeight="50.0" prefWidth="778.0" />
+                              <HBox prefHeight="100.0">
+                                 <children>
+                                    <VBox prefHeight="55.0" prefWidth="237.0">
+                                       <children>
+                                          <Label style="-fx-text-fill: b3b4b7;" styleClass="dashboard-text-big" text="First Name" />
+                                          <Label fx:id="L_accInfoFirstName" prefHeight="25.0" prefWidth="250.0" styleClass="dashboard-text-small" text="\%acc_firstName%" textFill="WHITE">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="55.0" prefWidth="250.0">
+                                       <children>
+                                          <Label style="-fx-text-fill: #b3b4b7;" styleClass="dashboard-text-big" text="Last Name" />
+                                          <Label fx:id="L_accInfoLastName" prefHeight="25.0" prefWidth="250.0" styleClass="dashboard-text-small" text="\%acc_lastName%" textFill="WHITE">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <AnchorPane prefHeight="50.0" prefWidth="778.0" />
+                              <HBox prefHeight="100.0">
+                                 <children>
+                                    <VBox prefHeight="55.0" prefWidth="250.0">
+                                       <children>
+                                          <Label fx:id="L_accInfoIndex6" style="-fx-text-fill: #b3b4b7;" styleClass="dashboard-text-big" text="\%acc_index6%" />
+                                          <Label fx:id="L_accInfoIndex6Value" prefHeight="25.0" prefWidth="250.0" styleClass="dashboard-text-small" text="\%acc_index6Value%" textFill="WHITE">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="55.0" prefWidth="250.0">
+                                       <children>
+                                          <Label fx:id="L_accInfoIndex7" style="-fx-text-fill: #b3b4b7;" styleClass="dashboard-text-big" text="\%acc_index7%" />
+                                          <Label fx:id="L_accInfoIndex7Value" prefHeight="25.0" prefWidth="252.0" styleClass="dashboard-text-small" text="\%acc_index7Value%" textFill="WHITE">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="55.0" prefWidth="250.0">
+                                       <children>
+                                          <Label fx:id="L_accInfoStudentCampus" style="-fx-text-fill: #b3b4b7;" styleClass="dashboard-text-big" text="Campus" />
+                                          <Label fx:id="L_accInfoStudentCampusValue" prefHeight="25.0" prefWidth="252.0" styleClass="dashboard-text-small" text="\%acc_campus%" textFill="WHITE">
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets right="10.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="15.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </StackPane>
+         </children>
+         <stylesheets>
+            <URL value="@../style/fields.css" />
+            <URL value="@../style/buttons.css" />
+         </stylesheets>
+      </StackPane>
+   </center>
+   <left>
+      <StackPane prefWidth="323.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="TOP_CENTER" style="-fx-background-color: #202225;">
+               <children>
+                  <AnchorPane prefHeight="18.0" prefWidth="340.0" />
+                  <Label styleClass="dashboard-header" text="WELCOME BACK," />
+                  <Label fx:id="L_fullName" styleClass="dashboard-subheader" text="\%account_fullName%" />
+                  <AnchorPane prefHeight="52.0" prefWidth="323.0" />
+                  <ImageView fx:id="IV_accountImage" fitHeight="128.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/profile/no-image.png" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane prefHeight="34.0" prefWidth="323.0" />
+                  <Label styleClass="dashboard-header" text="YOU ARE A">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="L_class" styleClass="dashboard-header" text="\%account_class%">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane prefHeight="12.0" prefWidth="323.0" />
+                  <AnchorPane prefHeight="108.0" prefWidth="323.0" />
+                  <Button mnemonicParsing="false" onMouseClicked="#logoutFromDashboard" prefHeight="50.0" prefWidth="284.0" styleClass="danger-button" stylesheets="@../style/buttons.css" text="Logout" />
+                  <AnchorPane prefHeight="17.0" prefWidth="323.0" />
+                  <Button mnemonicParsing="false" onMouseClicked="#deleteMyAccount" styleClass="danger-text-button" stylesheets="@../style/buttons.css" text="Delete my account" />
+               </children>
+            </VBox>
+            <VBox fx:id="VB_loadingLeft" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #202225;">
+               <children>
+                  <ImageView fitHeight="89.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/loading-icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </left>
+</BorderPane>

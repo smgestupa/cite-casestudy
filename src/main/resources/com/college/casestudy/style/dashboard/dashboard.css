@@ -1,0 +1,57 @@
+.dashboard-background {
+    -fx-background-color: #36393f;
+}
+
+.dashboard-header {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-font-family: 'Uni Sans';
+}
+
+.dashboard-subheader {
+    -fx-text-fill: #b3b4b7;
+    -fx-font-size: 16px;
+}
+
+.dashboard-text-small {
+    -fx-font-size: 16px;
+}
+
+.dashboard-text-big {
+    -fx-font-size: 18px;
+}
+
+.dashboard-input-label {
+    -fx-text-fill: #b3b4b7;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.dashboard-highlight-text {
+    -fx-text-fill: #02a9eb;
+    -fx-font-size: 16px;
+    -fx-font-weight: 500;
+}
+
+.scroll-pane > .viewport {
+   -fx-background-color: transparent;
+}
+
+.scroll-pane {
+   -fx-background-color: transparent;
+}
+
+.scroll-bar {
+   -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #202225;
+    -fx-background-radius: 9999px;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+   -fx-shape : " ";
+}

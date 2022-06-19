@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="BP_accessScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="960.0" styleClass="access-background" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.college.casestudy.controller.AccessViewController">
+   <top>
+      <HBox fx:id="HB_customMenuBar" alignment="CENTER_LEFT" fillHeight="false" onMouseDragged="#onDragMenuBar" onMousePressed="#onClickMenuBar" prefHeight="35.0" prefWidth="960.0" styleClass="menu-bar" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="menu-title" text="CITE 004 " />
+            <Label styleClass="menu-subtitle" text="- Case Study" />
+            <AnchorPane prefHeight="35.0" HBox.hgrow="SOMETIMES" />
+            <Label onMouseClicked="#onMinimizeProgram" prefHeight="35.0" styleClass="menu-minimize" text="―">
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </Label>
+            <Label onMouseClicked="#onCloseProgram" prefHeight="35.0" styleClass="menu-close" text="X">
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="10.0" />
+         </padding></HBox>
+   </top>
+   <left>
+      <AnchorPane prefHeight="430.0" prefWidth="40.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <AnchorPane prefHeight="430.0" prefWidth="40.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <AnchorPane prefHeight="30.0" prefWidth="960.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="403.0" prefWidth="644.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="AP_loginPage" prefHeight="200.0" prefWidth="200.0" styleClass="access-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="30.0" prefWidth="354.0" />
+                        <Label styleClass="access-header" text="LOGIN" />
+                        <AnchorPane prefHeight="11.0" prefWidth="354.0" />
+                        <Label styleClass="access-subheader" text="Welcome back, we're excited to see you again!" />
+                        <AnchorPane prefHeight="30.0" prefWidth="880.0" />
+                        <HBox alignment="CENTER" prefHeight="73.0" prefWidth="880.0">
+                           <children>
+                              <VBox fillWidth="false" prefHeight="73.0" prefWidth="567.0">
+                                 <children>
+                                    <Label styleClass="access-input-label" text="Username" />
+                                    <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                    <TextField fx:id="TF_usernameLogin" prefHeight="35.0" prefWidth="668.0" styleClass="input-field" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <AnchorPane prefHeight="5.0" prefWidth="880.0" />
+                        <HBox alignment="CENTER" prefHeight="73.0" prefWidth="880.0">
+                           <children>
+                              <VBox prefHeight="73.0" prefWidth="342.0">
+                                 <children>
+                                    <Label styleClass="access-input-label" text="Password" />
+                                    <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                    <PasswordField fx:id="PF_passwordLogin" prefHeight="35.0" prefWidth="260.0" styleClass="input-field" />
+                                 </children>
+                              </VBox>
+                              <AnchorPane prefHeight="73.0" prefWidth="24.0" />
+                              <VBox prefHeight="73.0" prefWidth="201.0">
+                                 <children>
+                                    <Label styleClass="access-input-label" text="Access Code" />
+                                    <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                    <TextField fx:id="TF_codeLogin" prefHeight="35.0" prefWidth="168.0" styleClass="input-field" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <AnchorPane prefHeight="15.0" prefWidth="880.0" />
+                        <HBox alignment="CENTER" prefHeight="67.0" prefWidth="880.0">
+                           <children>
+                              <Button fx:id="BUTTON_login" mnemonicParsing="false" onMouseClicked="#onLogin" prefHeight="50.0" prefWidth="200.0" stylesheets="@../style/buttons.css" text="Login">
+                                 <styleClass>
+                                    <String fx:value="button" />
+                                    <String fx:value="search-button" />
+                                 </styleClass>
+                              </Button>
+                              <AnchorPane prefHeight="100.0" prefWidth="15.0" />
+                              <Label styleClass="access-text-small" text="Don't have an account? " />
+                              <Label onMouseClicked="#toAccessPage" style="-fx-font-size: 14px;" styleClass="text-button" text="Register instead" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+               <stylesheets>
+                  <URL value="@../style/access/access.css" />
+                  <URL value="@../style/buttons.css" />
+                  <URL value="@../style/fields.css" />
+               </stylesheets>
+            </AnchorPane>
+            <VBox fx:id="VB_registerStudentPage" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="access-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="30.0" prefWidth="354.0" />
+                  <HBox alignment="CENTER" prefHeight="17.0" prefWidth="880.0">
+                     <children>
+                        <Label styleClass="access-header" text="REGISTER " />
+                        <Label styleClass="access-subheader" text="as a Student" />
+                     </children>
+                  </HBox>
+                  <AnchorPane prefHeight="15.0" prefWidth="880.0" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="SOMETIMES">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="SOMETIMES">
+                           <children>
+                              <AnchorPane prefHeight="5.0" prefWidth="880.0" />
+                              <HBox alignment="CENTER" prefHeight="73.0" prefWidth="880.0" VBox.vgrow="SOMETIMES">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="345.0" prefWidth="412.0" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <AnchorPane prefHeight="15.0" />
+                                          <VBox prefHeight="74.0" prefWidth="401.0">
+                                             <children>
+                                                <Label styleClass="access-input-label" text="First Name" />
+                                                <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                <TextField fx:id="TF_firstNameStudent" prefHeight="35.0" prefWidth="342.0" styleClass="input-field" />
+                                             </children>
+                                          </VBox>
+                                          <HBox prefHeight="74.0" prefWidth="401.0">
+                                             <children>
+                                                <VBox prefHeight="74.0" prefWidth="295.0" HBox.hgrow="SOMETIMES">
+                                                   <children>
+                                                      <Label styleClass="access-input-label" text="Last Name" />
+                                                      <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                      <TextField fx:id="TF_lastNameStudent" prefHeight="35.0" prefWidth="668.0" styleClass="input-field" />
+                                                   </children>
+                                                </VBox>
+                                                <AnchorPane prefHeight="74.0" prefWidth="75.0" />
+                                                <VBox prefHeight="74.0" prefWidth="204.0">
+                                                   <children>
+                                                      <Label styleClass="access-input-label" text="Year Level" />
+                                                      <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                      <TextField fx:id="TF_yearLevelStudent" prefHeight="35.0" prefWidth="668.0" styleClass="input-field" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="74.0" prefWidth="401.0">
+                                             <children>
+                                                <VBox prefHeight="74.0" prefWidth="295.0" HBox.hgrow="SOMETIMES">
+                                                   <children>
+                                                      <Label styleClass="access-input-label" text="Program" />
+                                                      <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                      <TextField fx:id="TF_programStudent" prefHeight="35.0" prefWidth="668.0" styleClass="input-field" />
+                                                   </children>
+                                                </VBox>
+                                                <AnchorPane prefHeight="74.0" prefWidth="75.0" />
+                                                <VBox prefHeight="74.0" prefWidth="204.0">
+                                                   <children>
+                                                      <Label styleClass="access-input-label" text="Campus" />
+                                                      <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                      <ComboBox fx:id="CB_campusStudent" prefHeight="35.0" prefWidth="150.0" visibleRowCount="2" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" prefWidth="15.0">
+                           <children>
+                              <ImageView fitHeight="250.0" fitWidth="1.5" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../assets/misc/line.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="SOMETIMES">
+                           <children>
+                              <AnchorPane prefHeight="5.0" prefWidth="880.0" />
+                              <HBox alignment="CENTER" prefHeight="73.0" prefWidth="880.0" VBox.vgrow="SOMETIMES">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="345.0" prefWidth="412.0" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <AnchorPane prefHeight="15.0" />
+                                          <VBox prefHeight="74.0" prefWidth="401.0">
+                                             <children>
+                                                <Label styleClass="access-input-label" text="Username" />
+                                                <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                <TextField fx:id="TF_usernameStudent" prefHeight="35.0" prefWidth="342.0" styleClass="input-field" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="74.0" prefWidth="401.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="401.0">
+                                                   <children>
+                                                      <Label styleClass="access-input-label" text="Student Code " />
+                                                      <Label styleClass="access-text-small" text="(This will be used as your Access Code)" />
+                                                   </children>
+                                                </HBox>
+                                                <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                <TextField fx:id="TF_studentCode" prefHeight="35.0" prefWidth="342.0" styleClass="input-field" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="74.0" prefWidth="401.0">
+                                             <children>
+                                                <Label styleClass="access-input-label" text="Password" />
+                                                <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                <PasswordField fx:id="PF_passwordStudent" prefHeight="35.0" prefWidth="269.0" styleClass="input-field" />
+                                             </children>
+                                          </VBox>
+                                          <AnchorPane prefHeight="10.0" />
+                                          <AnchorPane prefHeight="10.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="67.0" prefWidth="880.0">
+                     <children>
+                        <Button fx:id="BUTTON_registerStudent" mnemonicParsing="false" onMouseClicked="#onRegisterStudent" prefHeight="50.0" prefWidth="200.0" stylesheets="@../style/buttons.css" text="Register">
+                           <styleClass>
+                              <String fx:value="button" />
+                              <String fx:value="search-button" />
+                           </styleClass>
+                        </Button>
+                        <AnchorPane prefHeight="100.0" prefWidth="15.0" />
+                        <Label styleClass="access-text-small" text="Already have an account? " />
+                        <Label onMouseClicked="#toLoginPage" style="-fx-font-size: 14px;" styleClass="text-button" text="Login instead" />
+                     </children>
+                  </HBox>
+               </children>
+               <stylesheets>
+                  <URL value="@../style/access/access.css" />
+                  <URL value="@../style/buttons.css" />
+                  <URL value="@../style/fields.css" />
+               </stylesheets>
+            </VBox>
+            <VBox fx:id="VB_registerTeacherPage" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" styleClass="access-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="30.0" prefWidth="354.0" />
+                  <HBox alignment="CENTER" prefHeight="17.0" prefWidth="880.0">
+                     <children>
+                        <Label styleClass="access-header" text="REGISTER " />
+                        <Label styleClass="access-subheader" text="as a Teacher" />
+                     </children>
+                  </HBox>
+                  <AnchorPane prefHeight="15.0" prefWidth="880.0" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="SOMETIMES">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="SOMETIMES">
+                           <children>
+                              <AnchorPane prefHeight="5.0" prefWidth="880.0" />
+                              <HBox alignment="CENTER" prefHeight="73.0" prefWidth="880.0" VBox.vgrow="SOMETIMES">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="345.0" prefWidth="412.0" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <AnchorPane prefHeight="15.0" />
+                                          <VBox prefHeight="74.0" prefWidth="401.0">
+                                             <children>
+                                                <Label styleClass="access-input-label" text="First Name" />
+                                                <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                <TextField fx:id="TF_firstNameTeacher" prefHeight="35.0" prefWidth="342.0" styleClass="input-field" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="74.0" prefWidth="401.0">
+                                             <children>
+                                                <Label styleClass="access-input-label" text="Last Name" />
+                                                <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                <TextField fx:id="TF_lastNameTeacher" prefHeight="35.0" prefWidth="668.0" styleClass="input-field" />
+                                             </children>
+                                          </VBox>
+                                          <HBox prefHeight="74.0" prefWidth="401.0">
+                                             <children>
+                                                <VBox prefHeight="74.0" prefWidth="295.0" HBox.hgrow="SOMETIMES">
+                                                   <children>
+                                                      <Label styleClass="access-input-label" text="College" />
+                                                      <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                      <TextField fx:id="TF_collegeTeacher" prefHeight="35.0" prefWidth="668.0" styleClass="input-field" />
+                                                   </children>
+                                                </VBox>
+                                                <AnchorPane prefHeight="74.0" prefWidth="75.0" />
+                                                <VBox prefHeight="74.0" prefWidth="204.0">
+                                                   <children>
+                                                      <Label styleClass="access-input-label" text="Campus" />
+                                                      <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                      <ComboBox fx:id="CB_campusTeacher" prefHeight="35.0" prefWidth="150.0" visibleRowCount="2" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <AnchorPane prefHeight="10.0" />
+                                          <AnchorPane prefHeight="10.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" prefWidth="15.0">
+                           <children>
+                              <ImageView fitHeight="250.0" fitWidth="1.5" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@../assets/misc/line.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="SOMETIMES">
+                           <children>
+                              <AnchorPane prefHeight="5.0" prefWidth="880.0" />
+                              <HBox alignment="CENTER" prefHeight="73.0" prefWidth="880.0" VBox.vgrow="SOMETIMES">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" fillWidth="false" prefHeight="345.0" prefWidth="412.0" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <AnchorPane prefHeight="15.0" />
+                                          <VBox prefHeight="74.0" prefWidth="401.0">
+                                             <children>
+                                                <Label styleClass="access-input-label" text="Username" />
+                                                <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                <TextField fx:id="TF_usernameTeacher" prefHeight="35.0" prefWidth="342.0" styleClass="input-field" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="74.0" prefWidth="401.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="401.0">
+                                                   <children>
+                                                      <Label styleClass="access-input-label" text="Teacher Code " />
+                                                      <Label styleClass="access-text-small" text="(This will be used as your Access Code)" />
+                                                   </children>
+                                                </HBox>
+                                                <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                <TextField fx:id="TF_teacherCode" prefHeight="35.0" prefWidth="342.0" styleClass="input-field" />
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="74.0" prefWidth="401.0">
+                                             <children>
+                                                <Label styleClass="access-input-label" text="Password" />
+                                                <AnchorPane prefHeight="1.5" prefWidth="354.0" />
+                                                <PasswordField fx:id="PF_passwordTeacher" prefHeight="35.0" prefWidth="269.0" styleClass="input-field" />
+                                             </children>
+                                          </VBox>
+                                          <AnchorPane prefHeight="10.0" />
+                                          <AnchorPane prefHeight="10.0" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="67.0" prefWidth="880.0">
+                     <children>
+                        <Button fx:id="BUTTON_registerTeacher" mnemonicParsing="false" onMouseClicked="#onRegisterTeacher" prefHeight="50.0" prefWidth="200.0" stylesheets="@../style/buttons.css" text="Register">
+                           <styleClass>
+                              <String fx:value="button" />
+                              <String fx:value="search-button" />
+                           </styleClass>
+                        </Button>
+                        <AnchorPane prefHeight="100.0" prefWidth="15.0" />
+                        <Label styleClass="access-text-small" text="Already have an account? " />
+                        <Label onMouseClicked="#toLoginPage" style="-fx-font-size: 14px;" styleClass="text-button" text="Login instead" />
+                     </children>
+                  </HBox>
+               </children>
+               <stylesheets>
+                  <URL value="@../style/access/access.css" />
+                  <URL value="@../style/buttons.css" />
+                  <URL value="@../style/fields.css" />
+               </stylesheets>
+            </VBox>
+            <HBox fx:id="HB_accessPage" prefHeight="100.0" prefWidth="200.0" styleClass="access-background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox fx:id="VB_loginSection" alignment="TOP_CENTER" prefHeight="416.0" prefWidth="295.0" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <AnchorPane prefHeight="70.0" prefWidth="354.0" />
+                        <Label styleClass="access-header" text="LOGIN" />
+                        <AnchorPane prefHeight="11.0" prefWidth="354.0" />
+                        <Label styleClass="access-subheader" text="Already have an account?" />
+                        <AnchorPane prefHeight="117.0" prefWidth="437.0" />
+                        <Button mnemonicParsing="false" onMouseClicked="#toLoginPage" prefHeight="50.0" prefWidth="240.0" stylesheets="@../style/buttons.css" text="Login">
+                           <styleClass>
+                              <String fx:value="button" />
+                              <String fx:value="search-button" />
+                           </styleClass>
+                        </Button>
+                        <AnchorPane prefHeight="17.0" prefWidth="354.0" />
+                        <HBox alignment="CENTER" fillHeight="false" prefHeight="18.0" prefWidth="354.0">
+                           <children>
+                              <Label styleClass="access-subheader" text="You can login as a " />
+                              <Label styleClass="access-highlight-text" text="Student " />
+                              <Label styleClass="access-subheader" text="or " />
+                              <Label styleClass="access-highlight-text" text="Teacher" />
+                           </children>
+                        </HBox>
+                        <AnchorPane prefHeight="88.0" prefWidth="354.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="430.0" prefWidth="5.0">
+                     <children>
+                        <ImageView fitHeight="400.0" fitWidth="1.5" pickOnBounds="true">
+                           <image>
+                              <Image url="@../assets/misc/line.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <VBox fx:id="VB_registerSection" alignment="TOP_CENTER" prefHeight="416.0" prefWidth="295.0" HBox.hgrow="SOMETIMES">
+                     <children>
+                        <AnchorPane prefHeight="70.0" prefWidth="354.0" />
+                        <Label styleClass="access-header" text="REGISTER" />
+                        <AnchorPane prefHeight="11.0" prefWidth="354.0" />
+                        <Label styleClass="access-subheader" text="Need an account? Feel free to make one!" />
+                        <AnchorPane prefHeight="83.0" prefWidth="354.0" />
+                        <Button mnemonicParsing="false" onMouseClicked="#toRegisterStudentPage" prefHeight="50.0" prefWidth="240.0" stylesheets="@../style/buttons.css" text="Register as a Student">
+                           <styleClass>
+                              <String fx:value="button" />
+                              <String fx:value="search-button" />
+                           </styleClass>
+                        </Button>
+                        <AnchorPane prefHeight="17.0" prefWidth="354.0" />
+                        <Button mnemonicParsing="false" onMouseClicked="#toRegisterTeacherPage" prefHeight="50.0" prefWidth="240.0" stylesheets="@../style/buttons.css" text="Register as a Teacher">
+                           <styleClass>
+                              <String fx:value="button" />
+                              <String fx:value="search-button" />
+                           </styleClass>
+                        </Button>
+                        <AnchorPane prefHeight="88.0" prefWidth="354.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </center>
+   <stylesheets>
+      <URL value="@../style/access/access.css" />
+      <URL value="@../style/style.css" />
+   </stylesheets>
+</BorderPane>

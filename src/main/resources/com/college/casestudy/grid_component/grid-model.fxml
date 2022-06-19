@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#clickGridModel" prefHeight="300.0" prefWidth="200.0" styleClass="grid-entry" stylesheets="@../style/grid_model/grid_model.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.college.casestudy.controller.grid.GridModelController">
+   <children>
+      <Pane prefHeight="78.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="14.0" layoutY="13.0" text="Access Code" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="L_modelAccessCode" layoutX="14.0" layoutY="33.0" prefHeight="27.0" prefWidth="175.0" text="\%acc_accessCode%" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fx:id="IV_profileImage" fitHeight="132.0" fitWidth="131.0" pickOnBounds="true" VBox.vgrow="NEVER">
+         <image>
+            <Image url="@../assets/profile/no-image.png" />
+         </image>
+      </ImageView>
+      <Pane prefHeight="55.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label fx:id="L_modelFirstName" layoutX="14.0" layoutY="18.0" text="\%acc_firstName%" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="L_modelLastName" layoutX="14.0" layoutY="47.0" text="\%acc_lastName%" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</VBox>

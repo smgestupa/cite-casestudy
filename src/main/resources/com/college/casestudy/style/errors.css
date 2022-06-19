@@ -1,0 +1,26 @@
+.input-field-missing {
+    -fx-text-fill: white;
+    -fx-background-color: #40444b;
+    -fx-background-radius: 8px;
+    -fx-border-color: #ed4245;
+    -fx-border-width: 1;
+    -fx-border-radius: 3px;
+}
+
+.input-field-missing:hover {
+    -fx-text-fill: white;
+    -fx-background-color: #40444b;
+    -fx-background-radius: 8px;
+    -fx-border-color: #ed4245;
+    -fx-border-width: 1;
+    -fx-border-radius: 3px;
+}
+
+.input-field-missing:focused {
+    -fx-text-fill: white;
+    -fx-background-color: #40444b;
+    -fx-background-radius: 8px;
+    -fx-border-color: #ed4245;
+    -fx-border-width: 1;
+    -fx-border-radius: 3px;
+}
